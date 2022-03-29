@@ -1,0 +1,77 @@
+
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="user-pro"> 
+                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                                <img src="/admin/theme1/images/users/{{avatar_admin}}" alt="user-img" class="img-circle">
+                                <span class="hide-menu">{{name}}</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="/admin/admin/edit_admin/{{id_admin}}"><i class="ti-user"></i> My Profile</a></li>
+                                <li><a href="/admin/admin/edit_password/"><i class="ti-key"></i> Edit Password</a></li>
+                                <li><a href="/admin/logout"><i class="fa fa-power-off"></i> Logout</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="nav-small-cap">--- MENU</li>
+                        <li> 
+                            <a class="has-arrow waves-effect waves-dark" href="javascript:avoid(0)" aria-expanded="false">
+                                <i class="fa fa-location-arrow"></i>
+                                <span class="hide-menu">Send Email</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="/admin/emails_send/single">Send Single Email</a></li>
+                                <li><a href="/admin/emails_send/multi">Send Multi Email</a></li>
+                            </ul>
+                        </li>
+                        <li> 
+                            <a class="has-arrow waves-effect waves-dark" href="javascript:avoid(0)" aria-expanded="false">
+                                <i class="fa fa-envelope"></i>
+                                <span class="hide-menu">Email List</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="/admin/emails/add">Add Email</a></li>
+                                <li><a href="/admin/emails/list">List Email</a></li>
+                            </ul>
+                        </li>
+                        <li> 
+                            <a class="has-arrow waves-effect waves-dark" href="javascript:avoid(0)" aria-expanded="false">
+                                <i class="fa fa-envelope-square"></i>
+                                <span class="hide-menu">Email Group</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="/admin/emails_group/add">Add Group</a></li>
+                                <li><a href="/admin/emails_group/list">List Group</a></li>
+                            </ul>
+                        </li>
+                        <li> 
+                            <a class="has-arrow waves-effect waves-dark" href="javascript:avoid(0)" aria-expanded="false">
+                                <i class="fa fa-user"></i>
+                                <span class="hide-menu">Admins</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="/admin/admin/add">Add Admin</a></li>
+                                <li><a href="/admin/admin">List Admin</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fa fa-edit"></i><span class="hide-menu">Settings</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="/admin/settings/general">General Settings</a></li>
+                            </ul>
+                        </li>
+					</ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->

@@ -1,0 +1,35 @@
+{
+  "name": "blasty_nodejs",
+  "version": "1.0.0",
+  "description": "Blast Email System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/andreashworks/blasty_nodejs.git"
+  },
+  "author": "Andreas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/andreashworks/blasty_nodejs/issues"
+  },
+  "homepage": "https://gitlab.com/andreashworks/blasty_nodejs#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "html": "^1.0.0",
+    "multer": "^1.4.4",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.7.2",
+    "nunjucks": "^3.2.3"
+  }
+}

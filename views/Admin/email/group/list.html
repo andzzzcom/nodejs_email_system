@@ -1,0 +1,118 @@
+{% extends "../../Main.html" %}
+{% block main %}
+	<!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h4 class="text-themecolor">List Group</h4>
+                </div>
+                <div class="col-md-7 align-self-center text-right">
+                    <div class="d-flex justify-content-end align-items-center">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                            <li class="breadcrumb-item active">Group</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">List Group</h4>
+                            <a href="/admin/emails_group/add" class="btn btn-success m-b-20">
+                                <i class="fa fa-envelope"></i>
+                                Add Email's Group
+                            </a>
+                            {% if(message.success) %}
+                                <div class="alert alert-success" role="alert">
+                                    {{message.success}}
+                                </div>
+                            {% endif %}
+                            {% if(message.failed) %}
+                                <div class="alert alert-warning" role="alert">
+                                    {{message.failed}}
+                                </div>
+                            {% endif %}
+                            
+                            <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
+                            <div class="table-responsive m-t-10">
+                                <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th width="5%">No</th>
+                                            <th width="45%">Name</th>
+                                            <th width="15%">Created Date</th>
+                                            <th width="15%">Last Updated Date</th>
+                                            <th width="10%">Status</th>
+                                            <th width="10%"></th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Name</th>
+                                            <th>Created Date</th>
+                                            <th>Last Updated Date</th>
+                                            <th>Status</th>
+                                            <th></th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        {% set i = 1 %}
+                                        {% for group in groups %}
+                                            <tr>
+                                                <td>{{i}}</td>
+                                                <td>{{ group.name }}</td>
+                                                <td>{{ group.created_date }}</td>
+                                                <td>{{ group.last_updated_date }}</td>
+                                                <td>
+                                                    {% if group.status==1 %}
+                                                        <p class="label label-success">Active</p>
+                                                    {% else %}
+                                                        <p class="label label-danger">Not Active</p>
+                                                    {% endif %}
+                                                </td>
+                                                <td>
+                                                    <a href="/admin/emails_group/edit/{{group.id_group}}"><i class="fa fa-edit fa-2x"></i> </a>
+                                                    <a href="/admin/emails_group/delete/{{group.id_group}}"><i class="fa fa-trash fa-2x"></i> </a>
+                                                </td>
+                                            </tr>
+                                            {% set i = i+1 %}
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End PAge Content -->
+            <!-- ============================================================== -->
+            
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+    
+{% endblock %}

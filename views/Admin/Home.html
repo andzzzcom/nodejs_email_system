@@ -1,0 +1,185 @@
+{% extends "./Main.html" %}
+{% block main %}
+	
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h4 class="text-themecolor">Admin Panel | {{settings[0].title_web}}</h4>
+                    </div>
+                    <div class="col-md-7 align-self-center text-right">
+                        <div class="d-flex justify-content-end align-items-center">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="admin/home">Home</a></li>
+                            </ol>
+                            <a href="/admin/emails_group/list" class="btn btn-primary d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Email's Group</a>
+                            <a href="/admin/emails/list" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Emails</a>
+                            <a href="/admin/admin" class="btn btn-success d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Admins</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Info box -->
+                <!-- ============================================================== -->
+                <!-- .row -->
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-uppercase">Email's Group</h5>
+                                <div class="text-right"> <span class="text-muted">Total Email's Group</span>
+                                    <h2>{{emails_group.length}}</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-uppercase">Emails</h5>
+                                <div class="text-right"> <span class="text-muted">Total Emails</span>
+                                    <h2>{{emails.length}}</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-uppercase">Admins</h5>
+                                <div class="text-right"> <span class="text-muted">Total Admin</span>
+                                    <h2>{{admins.length}}</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+								<h4 class="card-title">List 5 Latests Email's Group</h4>
+								<a href="/admin/emails_group/list" class="btn btn-primary"><i class="fa fa-plus-circle"></i> View All</a>
+								<div class="table-responsive">
+									<table class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Name</th>
+												<th>Status</th>
+											</tr>
+										</thead>
+										<tfoot>
+											<tr>
+												<th>No</th>
+												<th>Name</th>
+												<th>Status</th>
+											</tr>
+										</tfoot>
+										<tbody>
+                                            {% for group in emails_group.slice(0, 5) %}
+												<tr>
+													<td>{{loop.index}}</td>
+													<td>
+                                                        {{group.name}}
+													</td>
+													<td>
+                                                        {% if group.status==1 %}
+                                                            <p class="label label-success">Active</p>
+                                                        {% else %}
+																<p class="label label-danger">Not Active</p>
+                                                        {% endif %}
+													</td>
+												</tr>
+                                            {% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
+								<h4 class="card-title">List 5 Latests Emails</h4>
+								<a href="/admin/emails/list" class="btn btn-info"><i class="fa fa-plus-circle"></i> View All</a>
+								<div class="table-responsive">
+									<table class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Name</th>
+												<th>Status</th>
+											</tr>
+										</thead>
+										<tfoot>
+											<tr>
+												<th>No</th>
+												<th>Name</th>
+												<th>Status</th>
+											</tr>
+										</tfoot>
+										<tbody>
+                                            {% for email in emails.slice(0, 5) %}
+												<tr>
+													<td>{{loop.index}}</td>
+													<td>
+                                                        {{email.email}}
+													</td>
+													<td>
+                                                        {{email.description}}
+													</td>
+													<td>
+                                                        {% if email.status==1 %}
+                                                            <p class="label label-success">Active</p>
+                                                        {% else %}
+																<p class="label label-danger">Not Active</p>
+                                                        {% endif %}
+													</td>
+												</tr>
+                                            {% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+                    
+                </div>
+                <!-- /.row -->
+                <!-- ============================================================== -->
+                <!-- End Info box -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Comment - table -->
+                <!-- ============================================================== -->
+               
+                <!-- ============================================================== -->
+                <!-- End Comment - chats -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- End Page Content -->
+                <!-- ============================================================== -->
+                
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+{% endblock %}
